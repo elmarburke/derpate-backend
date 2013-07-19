@@ -13,6 +13,14 @@ Abhängigkeiten
 Was es tut
 ----------
 
-Verwaltet Patenschaften für geoJSON-Geometrien. Gedacht ist diese Web-App für Kommunen, die Spielplatz-, Grünflächen-, Baumpatenschaften oder ähnliches Online vermitteln wollen. 
+Verwaltet Patenschaften für geoJSON-Geometrien. Gedacht ist diese Web-App für
+Kommunen, die Spielplatz-, Grünflächen-, Baumpatenschaften oder ähnliches Online
+vermitteln wollen. 
 
-Die Anwendung zeigt an, auf welcher Geometrie eine Patenschaft vorliegt. Wurde Eingewilligt, so ist der Name der Person zu sehen, andernfalls nur ein "belegt".
+Die Anwendung zeigt an, auf welcher Geometrie eine Patenschaft vorliegt. Wurde
+Eingewilligt, so ist der Name der Person zu sehen, andernfalls nur ein "belegt".
+
+Lizenz
+------
+
+Es gilt die in LICENSE genannte Lizenz. Dies ist die großartige MIT-Lizenz.
