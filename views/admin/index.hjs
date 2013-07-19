@@ -1,0 +1,25 @@
+<p>Details zu den Patenschaften</p>
+<ul>
+	{{#names}}
+	{{#value}}
+	<li>
+		<a href="/admin/sponsorship/{{ id }}/">{{ name }}
+		
+		{{#confirmed}}
+			<span style="color:green">&bull;</span>
+		{{/confirmed}}
+		{{^confirmed}}
+			<span style="color:red">&bull;</span>
+		{{/confirmed}}
+		</a>
+	</li>
+	{{/value}}
+	{{/names}}
+	{{^names}}
+	Keine Patenschaften vorhanden!
+	{{/names}}
+</ul>
+
+<pre style="display:none;">
+	{{{ debug }}}
+</pre>

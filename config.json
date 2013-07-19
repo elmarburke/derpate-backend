@@ -1,0 +1,11 @@
+{
+  "mail": {
+    
+  },
+  "couch": {
+    "username": "USERNAME",
+    "password": "PaS5w000d",
+    "host": "127.0.0.1",
+    "port": "5984"
+  }
+}

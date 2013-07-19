@@ -1,0 +1,34 @@
+
+    <h1>{{ title }}</h1>
+    <p>Welcome to {{ title }}</p>
+    
+    <div id="mapContainer">
+      <div id="map"></div>
+    </div>
+
+		<!-- Le Templates -->
+		{{=<% %>=}}
+		
+		<script type="text/template" id="map-popup">
+		<b>{{ properties.LANGNAME }}</b>
+		
+		{{#properties.ART}}
+		<p>{{ properties.ART }}</p>
+		{{/properties.ART}}
+		
+		{{#properties.taken}}
+		<p>Es ist schon eine Patenschaft vorhanden.</p>
+		{{/properties.taken}}
+		
+		{{^properties.taken}}
+		<p><a href="patewerden/{{ _id }}/">Jetzt Pate werden &rarr;</a></p>
+		{{/properties.taken}}
+		
+		</script>
+		
+		<%={{ }}=%>
+
+
+		<!-- Le Scripts -->
+		<script src="/javascripts/jquery-1.10.2.js"></script>
+		<script src="/javascripts/map.js"></script>

@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.ie.css" />
+<![endif]-->
+
+<a href="/admin/">&larr; Zurück</a>
+<h1>Details zur Patenschaft von {{name}}</h1>
+
+<dl>
+	<dt>eMail-Adresse</dt>
+	<dd><a href="mailto:{{email}}">{{email}}</a></dd>
+	<dt>Telefonnummer</dt>
+	<dd><a href="tel:{{phone}}">{{phone}}</a></dd>
+	<dt>Langname</dt>
+	<dd>{{geometry.properties.LANGNAME}}</dd>
+	<dt>Art</dt>
+	<dd>{{geometry.properties.ART}}{{^geometry.properties.ART}}keine Art angegeben{{/geometry.properties.ART}}</dd>
+	<dt>Karte</dt>
+	<dd>
+		<div id="map" style="height:300px; width: 300px;"></div>
+		<script src="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"></script>
+		<script>
+			var map = L.map('map').setView([51.4465, 6.6367], 11);
+			
+			/* 
+			 * Layer
+			 */
+
+			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, Imagery <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+			  maxZoom: 18
+			}).addTo(map);
+			
+			L.geoJson({{{geometryString}}}).addTo(map);
+		</script>
+	</dd>
+	<dt>Status</dt>
+	<dd>
+		{{#confirmed}}
+		Patenschaft bereits bestätigt <br>
+		<a href="/admin/sponsorship/{{_id}}/withdraw">Patenschaft jetzt zurückziehen</a>
+		{{/confirmed}}
+		{{^confirmed}}
+		Patenschaft unbestätigt <br>
+		<a href="/admin/sponsorship/{{_id}}/confirm">Patenschaft jetzt bestätigen</a>
+		{{/confirmed}}
+	</dd>
+	<dt>Löschen</dt>
+	<dd><a href="/admin/sponsorship/{{_id}}/{{_rev}}/delete">Diese Patenschaft löschen</a></dd>
+</dl>

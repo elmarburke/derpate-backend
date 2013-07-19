@@ -1,0 +1,12 @@
+{
+  "_design/geometry": {
+    "views": {
+      "byUsername": {
+        "map": "function(doc) { emit(null, doc); }"
+      }
+    },
+    "spatial": {
+      "points": "function(doc) { if(doc.geometry) { emit(doc.geometry, doc); }};"
+    }
+  }
+}
